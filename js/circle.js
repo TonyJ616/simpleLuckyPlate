@@ -408,11 +408,11 @@ function luckyNow(event){
 
     if (this.classList.contains("stopped")){
         this.classList.remove("stopped");
-        var rotateTime = Math.random() * 3;
-        console.log(Math.floor(rotateTime*1000 + 900));
+        var rotateTime = Math.random();
+        console.log(Math.floor(rotateTime*1000 + 1500));
         setTimeout(function(){
             startBtn.classList.add("stopped");
-        }, (Math.floor(rotateTime*1000 + 900)));
+        }, (Math.floor(rotateTime*1000 + 1500)));
 
     }
 }
