@@ -1,0 +1,436 @@
+html, body, div{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html, body{
+    height: 100%;
+}
+
+@media only screen and (max-width: 58em){
+    html{
+        height: auto;
+    }
+}
+.container{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.container > div {
+    flex: 1 0 0%;
+}
+
+@media only screen and (max-width: 58em){
+    .container{
+        flex-direction: column;
+    }
+}
+
+.circle-plate{
+    min-width: 50%;
+    position: relative;
+}
+
+.content{
+    
+}
+
+.content-table{
+    
+}
+
+@media only screen and (min-width: 36em){
+    .circle-plate{
+        width: 100%;
+    }
+    
+    .content{
+        width: 100%;
+    }
+    
+    .content-table{
+        width: 100%;
+    }
+}
+
+.user-setting{
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.classes{
+    max-height: 16%;
+}
+
+.classes > p{
+    font-weight: 700;
+    line-height: 1em;
+}
+
+.thankyou{
+    max-height: 16%;
+}
+
+.thankyou > p{
+    font-weight: 700;
+    line-height: 1em;
+}
+
+.class-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.name-frame{
+    margin-right: 1em;
+}
+
+.prob-frame{
+    margin-left: 1em;
+}
+
+.control-group{
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex:1 0 0%; 
+}
+
+@media only screen and (max-width: 58em){
+    .control-group{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+
+.control-group button:last-child{
+    margin-left: auto;
+}
+
+.control-group button{
+    padding: 0.25em 0.5em;
+}
+
+.save{
+    margin-bottom: 5%;
+}
+
+.save button{
+    padding: 0.25em 0.5em;
+    width: 10em;
+}
+
+.plate{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    height: 30em;
+    background-color: burlywood;
+    border-radius: 50%;
+}
+
+.startBtn{
+    position: absolute;
+    /* top: calc(50% - 3em);
+    left: calc(50% - 3em); */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 6em;
+    height: 6em;
+    background-color: rgb(201, 59, 23);
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    -webkit-animation: rotating .3s linear infinite;
+    animation: rotating .3s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+.stopped{
+    animation-play-state: paused;
+}
+
+.startBtn::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 3em solid transparent;
+    border-bottom-width: 5em;
+    border-bottom-color: rgb(201, 59, 23);
+    top: -4.5em;
+    z-index: -1;
+}
+
+/* 
+      turn : 定义的动画名称
+      1s : 动画时间
+      linear : 动画以何种运行轨迹完成一个周期
+      infinite :规定动画应该无限次播放
+     */
+@keyframes rotating{
+    0%{-webkit-transform:rotate(0deg);}
+    25%{-webkit-transform:rotate(90deg);}
+    50%{-webkit-transform:rotate(180deg);}
+    75%{-webkit-transform:rotate(270deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+.startText{
+    line-height: 4em;
+    cursor: pointer;
+}
+
+.pointer{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2em solid transparent;
+    border-bottom-color: rgb(201, 59, 23);
+    border-bottom-width: 6vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -130%);
+}
+
+@media only screen and (max-width: 58em){
+    .circle-plate{
+        min-height: 100vw;
+    }
+
+    .plate{
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .startBtn{
+        width: 18vw;
+        height: 18vw;
+    }
+
+    .pointer{
+        border-bottom-width: 10vw;
+        transform: translate(-50%, -120%);
+    }
+
+}
+
+.thankyou p::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0.6em solid gray;
+    float: left;
+}
+
+#class1 p::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0.6em solid rgb(211, 28, 165);
+    float: left;
+}
+
+#class2 p::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0.6em solid rgb(25, 97, 190);
+    float: left;
+}
+
+#class3 p::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0.6em solid rgb(5, 173, 61);
+    float: left;
+}
+
+#class4 p::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0.6em solid rgb(170, 29, 29);
+    float: left;
+}
+
+#class5 p::after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0.6em solid rgb(11, 168, 147);
+    float: left;
+}
+
+.classSectors{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    height: 30em;
+}
+
+.sector1{
+    width: 30em;
+    height: 30em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip: rect(0 30em 30em 15em);
+    transform: translate(-50%, -50%) rotate(0deg);
+    overflow: hidden;
+}
+
+.sector1::after{
+    content: '';
+    width: 100%; 
+    height: 100%;
+    background: rgb(211, 28, 165);
+    position: absolute;
+    clip: rect(0 15em 30em 0);
+    transform: rotate(0deg);
+    border-radius: 50%;
+}
+
+.sector2{
+    width: 30em;
+    height: 30em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip: rect(0 30em 30em 15em);
+    transform: translate(-50%, -50%) rotate(0deg);
+    overflow: hidden;
+}
+.sector2::after{
+    content: '';
+    width: 100%; 
+    height: 100%;
+    background: rgb(25, 97, 190);
+    position: absolute;
+    clip: rect(0 15em 30em 0);
+    transform: rotate(0deg);
+    border-radius: 50%;
+}
+
+.sector3{
+    width: 30em;
+    height: 30em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip: rect(0 30em 30em 15em);
+    transform: translate(-50%, -50%) rotate(0deg);
+    overflow: hidden;
+}
+.sector3::after{
+    content: '';
+    width: 100%; 
+    height: 100%;
+    background: rgb(5, 173, 61);
+    position: absolute;
+    clip: rect(0 15em 30em 0);
+    transform: rotate(288deg);
+    border-radius: 50%;
+}
+
+.sector4{
+    width: 30em;
+    height: 30em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip: rect(0 30em 30em 15em);
+    transform: translate(-50%, -50%) rotate(0deg);
+    overflow: hidden;
+}
+.sector4::after{
+    content: '';
+    width: 100%; 
+    height: 100%;
+    background: rgb(170, 29, 29);
+    position: absolute;
+    clip: rect(0 15em 30em 0);
+    transform: rotate(90deg);
+    border-radius: 50%;
+}
+
+.sector5{
+    width: 30em;
+    height: 30em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip: rect(0 30em 30em 15em);
+    transform: translate(-50%, -50%) rotate(0deg);
+    overflow: hidden;
+}
+.sector5::after{
+    content: '';
+    width: 100%; 
+    height: 100%;
+    background: rgb(11, 168, 147);
+    position: absolute;
+    clip: rect(0 15em 30em 0);
+    transform: rotate(90deg);
+    border-radius: 50%;
+}
+
+.sector6{
+    width: 30em;
+    height: 30em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    clip: rect(0 30em 30em 15em);
+    transform: translate(-50%, -50%) rotate(270deg);
+    overflow: hidden;
+}
+.sector6::after{
+    content: '';
+    width: 100%; 
+    height: 100%;
+    background: rgb(11, 168, 147);
+    position: absolute;
+    clip: rect(0 15em 30em 0);
+    transform: rotate(90deg);
+    border-radius: 50%;
+}
